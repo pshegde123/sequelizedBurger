@@ -1,0 +1,38 @@
+<h1 > Eat-Da-Burger </h1>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6" id="notEaten">
+            <ul>
+                {{#each burgers}}
+                {{#unless this.devoured}}
+                <li style="margin: 5px;">
+                    <button class="btn btn-danger" style="width:300px;">{{this.id}}.{{ this.burger_name }}</button>
+                    <button data-id="{{this.id}}" class="badge badge-pill badge-info burgerAvailable">Eat-da-burger</button>
+                </li>
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+
+        <div class="col-sm-6">
+            {{#each burgers}}
+            {{#if this.devoured}}
+            <div class='burgerEaten'>
+                <li style="margin: 5px;">
+                    <button class="btn btn-success" style="width:300px;">{{this.id}}.{{ this.burger_name }}</button>
+                </li>
+            </div>
+            {{/if}}
+            {{/each}}
+        </div>
+    </div>
+    <div class="row">
+        <form class="from-group create-form">
+            <label for="newBurger"><strong>Enter burger name:</strong></label>
+            <textarea class="form-control" id="newBurger" rows="3" style="width:400px;"></textarea>
+            <button type="submit" class="badge badge-pill badge-info" style="margin: 5px;">Add-da-burger</button>
+        </form>
+    </div>
+</div>
+
+</div>
