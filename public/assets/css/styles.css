@@ -1,0 +1,21 @@
+*{
+    margin: 0px;
+}
+body{
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-size: large;
+background: #F09819;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #EDDE5D, #F09819);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #EDDE5D, #F09819); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+#topimage{
+    width: 200px;
+    display: block;
+    margin: auto;
+}
+h1{
+    text-align: center;
+}
+.create-form{
+    margin-left: 300px;
+}
