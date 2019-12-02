@@ -9,7 +9,10 @@ background: -webkit-linear-gradient(to left, #EDDE5D, #F09819);  /* Chrome 10-25
 background: linear-gradient(to left, #EDDE5D, #F09819); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 #topimage{
-    width: 200px;
+    width: 60%;
+    height: 200px;
+    border: 5px double;
+    border-color: red;
     display: block;
     margin: auto;
 }
@@ -18,4 +21,9 @@ h1{
 }
 .create-form{
     margin-left: 300px;
+}
+#customer{
+    background: lightgreen;
+    width: 200px;
+    margin: 5px;
 }
