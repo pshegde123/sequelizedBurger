@@ -1,25 +1,28 @@
-<h1 > Eat-Da-Burger </h1>
+<h1> Eat-Da-Burger </h1>
 <div class="container">
     <div class="row">
-        <div class="col-sm-6" id="notEaten">
+        <div class="col-sm-8" id="notEaten">
             <ul>
                 {{#each burgers}}
-                {{#unless this.devoured}}
+                {{#unless this.Devoured}}
                 <li style="margin: 5px;">
-                    <button class="btn btn-danger" style="width:300px;">{{this.id}}.{{ this.burger_name }}</button>
-                    <button data-id="{{this.id}}" class="badge badge-pill badge-info burgerAvailable">Eat-da-burger</button>
+                    <form id="form-add">
+                        <button class="form-control btn btn-danger" style="width:200px;">{{this.id}}.{{ this.Name }}</button>
+                        <input type="text" id="customer"  placeholder="Enter customer name" pattern="[A-Za-z]+" required>
+                        <button data-id="{{this.id}}"
+                            class="badge badge-pill badge-info burgerAvailable">Eat-da-burger</button>
+                    </form>
                 </li>
                 {{/unless}}
                 {{/each}}
             </ul>
         </div>
-
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             {{#each burgers}}
-            {{#if this.devoured}}
+            {{#if this.Devoured}}
             <div class='burgerEaten'>
                 <li style="margin: 5px;">
-                    <button class="btn btn-success" style="width:300px;">{{this.id}}.{{ this.burger_name }}</button>
+                    <span class="text-secondary muted" style="width:200px;">{{this.id}}.{{ this.Name }}(Eaten by {{Customer.Name}}!)</span>
                 </li>
             </div>
             {{/if}}
@@ -29,7 +32,7 @@
     <div class="row">
         <form class="from-group create-form">
             <label for="newBurger"><strong>Enter burger name:</strong></label>
-            <textarea class="form-control" id="newBurger" rows="3" style="width:400px;"></textarea>
+            <textarea class="form-control" id="newBurger" rows="3" style="width:400px;" pattern="[A-Za-z0-9]+" required></textarea>
             <button type="submit" class="badge badge-pill badge-info" style="margin: 5px;">Add-da-burger</button>
         </form>
     </div>
