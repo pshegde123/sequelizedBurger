@@ -1,41 +1,47 @@
-<h1> Eat-Da-Burger </h1>
+<img class="mb-3" id="banner" src="/assets/images/wendy-banner-burger.jpg">
+<h1>EAT-DA-BURGER!</h1>
 <div class="container">
     <div class="row">
-        <div class="col-sm-8" id="notEaten">
-            <ul>
-                {{#each burgers}}
-                {{#unless this.Devoured}}
-                <li style="margin: 5px;">
-                    <form id="form-add">
-                        <button class="form-control btn btn-danger" style="width:200px;">{{this.id}}.{{ this.Name }}</button>
-                        <input type="text" id="customer"  placeholder="Enter customer name" pattern="[A-Za-z]+" required>
-                        <button data-id="{{this.id}}"
-                            class="badge badge-pill badge-info burgerAvailable">Eat-da-burger</button>
-                    </form>
-                </li>
-                {{/unless}}
-                {{/each}}
-            </ul>
-        </div>
-        <div class="col-sm-4">
+        <div class="col-lg-4">
+            <h2 class="header">Burgers to Devour</h2>
             {{#each burgers}}
-            {{#if this.Devoured}}
-            <div class='burgerEaten'>
-                <li style="margin: 5px;">
-                    <span class="text-secondary muted" style="width:200px;">{{this.id}}.{{ this.Name }}(Eaten by {{Customer.Name}}!)</span>
-                </li>
-            </div>
-            {{/if}}
+                {{#unless this.Devoured}}
+                    <ul>
+                        <li>
+                            <button data-toggle="popover" data-placement="right" data-html="true" data-title='Devour This Burger?' data-content='
+                                <form id="customer" action="/burgers/update/{{this.id}}?_method=PUT" method="POST">
+                                    <div class="form-group">
+                                        <input name="customer_devoured" value="1" type="number" style="display:none;">
+                                        <input name="customer_name" type="text" class="form-control" placeholder="Enter Customer Name">
+                                        <button type="submit" class="btn btn-block mt-2 btn-lettuce">Devour</button>
+                                    </div>
+                                </form>' 
+                            class="btn btn-mustard not-devoured">{{Name}}</button>
+                        </li>
+                    </ul>
+                {{/unless}}
+            {{/each}}
+        </div>
+        <div class="col-lg-4 text-center">
+            <form id="newBurger" action="/burgers/create" method="POST">
+                <div class="form-group">
+                    <input type="text" name="burger_name" class="form-control text-center" maxlength="50" placeholder="Enter Burger Name">
+                    <button class="btn btn-ketchup btn-block my-2" type="submit">Add Burger</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-4">
+            <h2 class="header">Burgers Devoured</h2>
+            {{#each burgers}}
+                {{#if this.Devoured}}
+                    <ul>
+                        <li>
+                            <button disabled class="btn btn-mustard devoured">{{Name}}</button>
+                            <span class="badge badge-pill badge-light btn-lettuce">Eaten by {{Customer.Name}}!</span>
+                        </li>
+                    </ul>
+                {{/if}}
             {{/each}}
         </div>
     </div>
-    <div class="row">
-        <form class="from-group create-form">
-            <label for="newBurger"><strong>Enter burger name:</strong></label>
-            <textarea class="form-control" id="newBurger" rows="3" style="width:400px;" pattern="[A-Za-z0-9]+" required></textarea>
-            <button type="submit" class="badge badge-pill badge-info" style="margin: 5px;">Add-da-burger</button>
-        </form>
-    </div>
-</div>
-
 </div>
