@@ -8,17 +8,11 @@
       "dialect": "mysql"
     },
     "test": {
-      "username": "root",
-      "password": null,
-      "database": "database_test",
-      "host": "127.0.0.1",
+      "host": "JAWSDB_URL",
       "dialect": "mysql"
     },
     "production": {
-      "username": "dxir2bt9w70lo9il",
-      "password": "uzvlgr55ikhel3t3",
-      "database": "otxat25aea8c2qd2",
-      "host": "hcm4e9frmbwfez47.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+      "host": "JAWSDB_URL",
       "dialect": "mysql"
     }
   }
