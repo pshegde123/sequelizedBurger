@@ -13,8 +13,10 @@ var PORT = process.env.PORT || 8080;
 
 // Requiring our models for syncing
 var db = require("./models");
+const methodOverride = require('method-override');
 
 // Sets up the Express app to handle data parsing
+app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
