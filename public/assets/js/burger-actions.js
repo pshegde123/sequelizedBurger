@@ -3,9 +3,12 @@ $(function () {
 
     $(".burgerAvailable").on("click", function (event) {
         var id = $(this).data("id");
+        var cName = $("#customer").val().trim();
+        console.log("burger-actions:cName=",cName);
 
         let newBurgerState = {
-            devoured: true
+            Devoured: true,
+            customer_name: cName
         }
         //Send the PUT request
         $.ajax("/burger:" + id, {
@@ -24,7 +27,7 @@ $(function () {
         event.preventDefault();
 
         var newBurger = {
-            burger_name: $("#newBurger").val().trim()
+            Name: $("#newBurger").val().trim()
         };
         // Send the POST request.
         $.ajax("/burgers", {

@@ -1,14 +1,8 @@
-*{
-    margin: 0px;
-}
 body{
 font-family: Georgia, 'Times New Roman', Times, serif;
 font-size: large;
-background: #F09819;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #EDDE5D, #F09819);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #EDDE5D, #F09819); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-#topimage{
+#banner{
     width: 60%;
     height: 200px;
     border: 5px double;
@@ -19,11 +13,30 @@ background: linear-gradient(to left, #EDDE5D, #F09819); /* W3C, IE 10+/ Edge, Fi
 h1{
     text-align: center;
 }
-.create-form{
-    margin-left: 300px;
+.header-bg {
+    background-color:#f67f72;
+    color:white;
 }
-#customer{
-    background: lightgreen;
-    width: 200px;
-    margin: 5px;
+.header {
+    color:#f67f72;
+}
+ul {
+    list-style-type: none;    
+}
+.btn-mustard {
+    background-color:#fac126;
+    color:white;
+}
+
+.btn-ketchup {
+    background-color:#f67f72;
+    color:white;
+}
+.btn-lettuce {
+    background-color:#adbf66;
+    color:white;
+}
+.errorMessage {
+    color:red;
+    font-weight:bold;
 }
