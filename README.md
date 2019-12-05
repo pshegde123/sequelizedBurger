@@ -2,7 +2,7 @@
 This is a single page webapp which demonstrates CRUD functioalilties. Users can create _burger_ entries by entering the name of a _burger_ into the text field. This creates a _burger_ entry in the `MySQL` database. Then, user can fill in the _customer_ name when they click on their newly created _burger_ and "eat" their _burger_. This creates a _customer_ entry in the `MySQL` database that is joined to the specific _burger_. 
 ![](./public/assets/images/SequelizeBurger.PNG)
 
-### [Live Demo](https://sequelize-burgernfries.herokuapp.com/burgers)
+### [Live Demo on Heroku](https://sequelize-burgernfries.herokuapp.com/burgers)
 
 ### Technologies used
 ---
