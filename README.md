@@ -30,9 +30,11 @@ This is a single page webapp which demonstrates CRUD functioalilties. Users can 
   
   OR execute command `npm install` 
 
-(4) Run the server using command `node server.js`. By default server will run on port 8080, if you wish to change the port number, please set your local environment variable PORT. 
+(4) Update the config/config.json settings as per your db creadentials. Execute script `schema.sql`.
 
-(5) Open URL http://localhost:8080 in your browser to view the app.
+(5) Run the server using command `node server.js`. By default server will run on port 8080, if you wish to change the port number, please set your local environment variable PORT. 
+
+(6) Open URL http://localhost:8080 in your browser to view the app.
 
 ### Author
 Click [here](https://github.com/pshegde123/sequelizedBurger/graphs/contributors) to see contribution history.
